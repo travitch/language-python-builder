@@ -22,3 +22,7 @@ library
                        language-python == 0.3.*, regex-tdfa
   hs-source-dirs:      src
   ghc-options: -Wall
+
+source-repository head
+  type: git
+  location: git://github.com/travitch/language-python-builder.git

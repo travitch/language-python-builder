@@ -202,7 +202,7 @@ type RewriteMonad annot = State (RewriteState annot)
 -- | Take an AST fragment wrapped in the Q monad and resolve all of
 -- the unique identifiers.  This can consume any AST fragment, but is
 -- probably most useful with Modules.
-runQ :: forall annot base . (Data annot, Biplate (base annot) (Ident annot))
+runQ :: forall annot base . (Data annot, Data (base annot), Biplate (base annot) (Ident annot))
         => Q (base annot) -> base annot
 runQ q = evalState tM rwState
   where
